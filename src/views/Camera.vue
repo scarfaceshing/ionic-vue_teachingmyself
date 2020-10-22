@@ -14,7 +14,7 @@
       </ion-col>
      </ion-row>
     </ion-grid>
-    <ion-img></ion-img>
+    <ion-img :src="photos.webPath"></ion-img>
    </ion-content>
   </ion-page>
 </template>
