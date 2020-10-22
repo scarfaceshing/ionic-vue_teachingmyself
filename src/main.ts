@@ -20,12 +20,18 @@ import '@ionic/vue/css/text-transformation.css';
 import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
 
+import { IonIcon } from '@ionic/vue';
+import { Store } from '@/store';
+
 /* Theme variables */
 import './theme/variables.css';
 
 const app = createApp(App)
   .use(IonicVue)
+  .use(Store)
   .use(router);
+
+app.component('ion-icon', IonIcon);
   
 router.isReady().then(() => {
   app.mount('#app');

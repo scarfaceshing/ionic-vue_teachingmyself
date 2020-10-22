@@ -5,7 +5,7 @@ import Tabs from '../views/Tabs.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/tabs/tab1'
+    redirect: '/tabs/qrscanner'
   },
   {
     path: '/tabs/',
@@ -13,20 +13,23 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '',
-        redirect: 'tab1'
+        redirect: 'qrscanner'
       },
       {
-        path: 'tab1',
-        component: () => import('@/views/Tab1.vue')
+        path: 'qrscanner',
+        name: 'qrscanner',
+        component: () => import('@/views/QRScanner.vue')
       },
       {
-        path: 'tab2',
-        component: () => import('@/views/Tab2.vue')
-      },
-      {
-        path: 'tab3',
-        component: () => import('@/views/Tab3.vue')
-      }
+       path: 'barcodescanner',
+       name: 'barcodescanner',
+       component: () => import('@/views/BarcodeScanner.vue')
+     },
+     {
+      path: 'camera',
+      name: 'camera',
+      component: () => import('@/views/Camera.vue')
+    }
     ]
   }
 ]
